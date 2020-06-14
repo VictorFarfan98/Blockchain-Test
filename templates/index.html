@@ -1,0 +1,87 @@
+<html>
+    <head>
+        <title> Billetera Blockchain</title>
+        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+        <link rel="stylesheet" href="homepage_css.css" type="text/css" />
+    </head>
+    <body onload="onLoad();">
+        <h1 align="center">Billetera Blockchain</h1>
+        <table class="saldos">
+            <tr>
+                <td align="right" style="padding: 10px; width: 15%;
+                font-size: 1.3em;">
+                    Saldo
+                </td>
+                <td class="saldo_container" style="width: 15%;
+                font-size: 1.3em;">
+                    Q 0.00
+                </td>
+            </tr>
+        </table>
+
+        <nav>
+            <ul>
+                <li id="historial" onclick="showElements('registro');">Historial</li>
+                <li id="nuevo_pago" onclick="showElements('pagos');">Nuevo Pago</li>
+            </ul>
+        </nav>
+
+        <div id="registro">
+            <table class="pure-table" width="100%">
+                    <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Enviado por</th>
+                                <th>Enviado a</th>
+                                <th>Cantidad</th>
+                            </tr>
+                        </thead>
+            </table>
+        </div>
+
+        <div id="pagos">
+            <form action="testcgi.py">
+                <table class="pagos"> 
+                    <tr>
+                        <td>Pagar a:    </td>
+                        <td><input type="text" id="pagar_a" name="pagar_a"/></td>
+                    </tr>
+                    <tr>
+                        <td>Cantidad:    </td>
+                        <td><input type="number" id="cantidad" name="cantidad"/></td>
+                    </tr>
+                    <tr>
+                        <td>Comentario:    </td>
+                        <td><textarea id="comentario" name="comentario"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center"><input type="submit" value="Pagar" id="boton_pagar"/></td>
+                    </tr>
+                    
+                </table>
+            </form>
+        </div>
+    </body>
+    <script type="text/javascript">
+        function onLoad(){
+            document.getElementById("pagos").style.display = "none";
+            document.getElementById("registro").style.display = "none";
+        }
+
+        function showElements(elemento){
+            //alert(elemento);
+            if(elemento == "registro"){
+                document.getElementById("pagos").style.display = "none";
+                document.getElementById("registro").style.display = "block"; 
+                document.getElementById("historial").style.color = "blue";
+                document.getElementById("nuevo_pago").style.color = "black";
+
+            }else{
+                document.getElementById("pagos").style.display = "block";
+                document.getElementById("registro").style.display = "none"; 
+                document.getElementById("historial").style.color = "black";
+                document.getElementById("nuevo_pago").style.color = "blue";
+            }
+        }
+    </script>
+</html>

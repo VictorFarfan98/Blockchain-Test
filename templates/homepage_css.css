@@ -1,0 +1,69 @@
+.saldos{
+    position: fixed;
+    left: 27.5%;  
+}
+
+.saldo_container{
+    color: green;
+    background-color: blanchedalmond;
+    border-style: dashed;
+    text-align: center;
+}
+
+ul{
+    position: fixed;
+    top: 17%;
+    left: 3%;
+    font-family: Courier New, Courier, monospace;
+    font-size: 1.8em;  
+}
+
+li{
+    display: inline;
+    list-style-type: none;
+    padding-right: 20px;
+    border-right-style: dotted;
+    cursor: crosshair;
+}
+
+li :hover{
+    font-size: 1.9em;
+    color: blue;
+}
+
+.pure-table{
+    width: 90%;
+    align-content: center;
+    position: absolute;
+    top: 30%;
+    left: 5%;
+}
+
+.pagos{
+    position: absolute;
+    left: 35%;
+    top: 30%;
+    font-size: 1.5em;
+    text-align: right;
+    margin: 1%;
+    height: 30%;
+}
+
+td{
+    padding-right: 0.2em;;
+}
+
+
+textarea{
+    width: 100%;
+    border-radius: 5%;
+}
+
+input{
+    border-radius: 5%;
+}
+
+#boton_pagar{
+    text-align: center;
+    font-size: 1.8em;
+}
